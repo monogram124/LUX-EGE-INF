@@ -1,14 +1,14 @@
-count = 1
+def algo(n):
+    if n <= 41:
+        return 0 
 
-def f(a, b):
-    global count
-    if a / b == 29 / 41:
-        return a, b, count
+    if n == 73:
+        return 0
     
-    print(a, b)
+    if n == 12:
+        return 1 
+    
+    return algo(n-3) + algo(n - 8) + algo(n // 2)
 
-    count += 1
 
-    return f(a+b, b+2*a)
-
-print(f(2, 3))
+print(algo(76))
